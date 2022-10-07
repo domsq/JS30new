@@ -47,18 +47,26 @@
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
-    const sorted = inventors.sort(function(a, b){
-      if (a.year > b.year) {
-        return 1;
-      } else {
-        return -1;
-      }
-    }) 
+    // const sorted = inventors.sort(function(a, b){
+    //   if (a.year > b.year) {
+    //     return 1;
+    //   } else {
+    //     return -1;
+    //   }
+    // }) 
+
+    // Using ternary operator to reduce syntax
+    const sorted = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
 
     console.table(sorted);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
+    const totalYrs = inventors.reduce((total, inventor) => {
+      return total + (inventor.passed - inventor.year);
+    }, 0);
+
+    console.log(totalYrs);
 
     // 5. Sort the inventors by years lived
 
