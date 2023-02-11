@@ -16,7 +16,9 @@
   context.strokeStyle = '#BADA55';
   context.lineJoin = 'round';
   context.lineCap = 'round';
-  context.lineWidth = 50; 
+  context.lineWidth = 100;
+  context.globalCompositeOperation = 'multiply';
+
 
   let isDrawing = false;
   let lastX = 0;
@@ -40,7 +42,7 @@
       hue = 0;
     }
     // Flip the direction based on the current line width
-    if (context.lineWidth >= 50 || context.lineWidth <= 1) {
+    if (context.lineWidth >= 100 || context.lineWidth <= 1) {
       direction = !direction
     }
     // If the direction is true increase line width, else decrease it
